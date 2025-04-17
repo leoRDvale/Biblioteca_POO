@@ -68,5 +68,59 @@ public class Emprestimo {
         }
     }
 
+    public static void devolverLivro() {
+        String titulo = JOptionPane.showInputDialog("Digite o título do livro:");
+        String nome = JOptionPane.showInputDialog("Digite o nome do usuário:");
+
+        Emprestimo devolver = null;
+
+        for (Emprestimo e : Main.emprestimos) {
+            if (e.getLivro().getTitulo().equalsIgnoreCase(titulo) && e.getUsuario().getNome().equalsIgnoreCase(nome)) {
+                devolver = e;
+                break;
+            }
+        }
+
+        if (devolver != null) {
+            Main.emprestimos.remove(devolver);
+            JOptionPane.showMessageDialog(null, "Empréstimo devolvido com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Empréstimo não encontrado.");
+        }
+    }
+
+    public static void renovarLivro() {
+        String titulo = JOptionPane.showInputDialog("Digite o título do livro:");
+        String nome = JOptionPane.showInputDialog("Digite o nome do usuário:");
+
+        Emprestimo renovar = null;
+
+        for (Emprestimo e : Main.emprestimos) {
+            if (e.getLivro().getTitulo().equalsIgnoreCase(titulo) && e.getUsuario().getNome().equalsIgnoreCase(nome)) {
+                renovar = e;
+                break;
+            }
+        }
+
+        if (renovar != null) {
+            String novaData = JOptionPane.showInputDialog("Digite a nova data do empréstimo:");
+            renovar.setDataDoEmprestimo(novaData);
+            JOptionPane.showMessageDialog(null, "Empréstimo renovado com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Empréstimo não encontrado.");
+        }
+    }
+
+    public static void listarEmprestimos() {
+        StringBuilder emprestimosList = new StringBuilder("Lista de Empréstimos:\n");
+        for (Emprestimo e : Main.emprestimos) {
+            emprestimosList.append("Livro: ").append(e.getLivro().getTitulo()).append(", Usuário: ").append(e.getUsuario().getNome()).append(", Data do Empréstimo: ").append(e.getDataDoEmprestimo()).append("\n");
+        }
+        JOptionPane.showMessageDialog(null, emprestimosList.toString());
+    }
+
+    //calcular multas
+
+
 
 }

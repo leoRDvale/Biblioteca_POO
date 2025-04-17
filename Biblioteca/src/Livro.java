@@ -57,4 +57,18 @@ public class Livro {
         JOptionPane.showMessageDialog(null, "Livro cadastrado com sucesso!");
     }
 
+    //https://codegym.cc/pt/groups/posts/pt.395.metodo-append-em-java-stringbuilder-e-stringbuffer
+    //metodo para listar usando StringBuilder e append
+
+    public static void listarLivros() {
+        StringBuilder listaLivros = new StringBuilder("Lista de Livros:\n");
+        for (Livro livro : Main.livros) {
+            listaLivros.append("Título: ").append(livro.getTitulo()).append("\n")
+                       .append("Autor: ").append(livro.getAutor()).append("\n")
+                       .append("Editora: ").append(livro.getEditora()).append("\n")
+                       .append("Edição: ").append(livro.getEdicao()).append("\n\n");
+        }
+        JOptionPane.showMessageDialog(null, listaLivros.toString());
+    }
+
 }

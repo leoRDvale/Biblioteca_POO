@@ -43,7 +43,14 @@ public class Usuario {
         Usuario usuario = new Usuario(nome, cpf, email);
         Main.usuarios.add(usuario);
         JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!");
-}
+    }
 
+    public static void listarUsuarios() {
+        StringBuilder usuariosList = new StringBuilder("Lista de Usuários:\n");
+        for (Usuario u : Main.usuarios) {
+            usuariosList.append("Nome: ").append(u.getNome()).append(", CPF: ").append(u.getCpf()).append(", E-mail: ").append(u.getEmail()).append("\n");
+        }
+        JOptionPane.showMessageDialog(null, usuariosList.toString());
 
     }
+}
