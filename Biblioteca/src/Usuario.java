@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class Usuario {
     private String nome;
     private String cpf;
@@ -32,4 +34,16 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public static void cadastrarUsuario() {
+        String nome = JOptionPane.showInputDialog("Digite o nome do usuário:");
+        String cpf = JOptionPane.showInputDialog("Digite o CPF do usuário:");
+        String email = JOptionPane.showInputDialog("Digite o e-mail do usuário:");
+
+        Usuario usuario = new Usuario(nome, cpf, email);
+        Main.usuarios.add(usuario);
+        JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!");
 }
+
+
+    }
