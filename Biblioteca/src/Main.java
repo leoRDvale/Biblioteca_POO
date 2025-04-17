@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         while (true) {
-            int opcao = Integer.parseInt(JOptionPane.showInputDialog(null, "****** Seja bem vindo a Livraria Potter ****** \n\n Digite a opção desejada:\n 1 - Cadastrar Livro\n 2 - Cadastrar Usuário \n 3 - Emprestar Livro \n 4 - Devolver Livro \n 5 - Renovar Emprestimo \n 6 - Listar Livros \n 7 - Listar Usuários \n 8 - Listar Empréstimos \n 9 - Sair"));
+            int opcao = Integer.parseInt(JOptionPane.showInputDialog(null, "****** Seja bem vindo a Floreios e Borrões Livraria ****** \n\n Digite a opção desejada:\n 1 - Cadastrar Livro\n 2 - Cadastrar Usuário \n 3 - Emprestar Livro \n 4 - Devolver Livro \n 5 - Renovar Emprestimo \n 6 - Listar Livros \n 7 - Listar Usuários \n 8 - Listar Empréstimos \n 9 - Sair"));
 
             switch (opcao) {
 
